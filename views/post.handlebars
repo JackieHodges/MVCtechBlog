@@ -1,0 +1,19 @@
+    <main>
+        <div class="container-fluid all-posts">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                          {{title}}
+                          <div style="text-align: right">Posted by {{user.name}} on {{format_date date_created}}</div>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text">{{description}}</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </main>
