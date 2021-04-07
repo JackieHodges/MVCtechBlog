@@ -18,6 +18,10 @@
     </div>
     {{/each}}
   </div>
+  {{#if logged_in}}
+    <button class="btn btn-primary btn-newpost" type="submit">New Post</button>
+  {{/if}}
 </main>
 
 <script src="./logout.js"></script>
+<script src="./newPost.js"></script>

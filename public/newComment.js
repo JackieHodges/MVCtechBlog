@@ -4,19 +4,19 @@ const newCommentHandler = async (event) => {
   
     // Gather the data from the form elements on the page
     const comment = document.querySelector('#newComment-text').value.trim();
-    const postId = post.id;
+    const postId = event.target.getAttribute('post-id');
     console.log(`the post id is ${postId}`);
   
     if (comment) {
       // Send the e-mail and password to the server
       const response = await fetch('/api/comment/', {
         method: 'POST',
-        body: JSON.stringify({ comment }),
+        body: JSON.stringify({ comment, postId }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        // document.location.replace('/post/1');
+        document.location.replace(`/post/${postId}`);
       } else {
         alert('Failed to post comment');
       }
@@ -25,4 +25,4 @@ const newCommentHandler = async (event) => {
   
   document
     .querySelector('.newComment-form')
-    .addEventListener('submit', newCommentHandler);
+    .addEventListener('click', newCommentHandler);
