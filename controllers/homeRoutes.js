@@ -103,6 +103,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
+
+router.get('/newpost', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('newpost');
+});
 
 module.exports = router;
