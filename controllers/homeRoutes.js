@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
+const { sequelize } = require('../models/User');
 const withAuth = require('../utils/auth');
 const { route } = require('./api/userRoutes');
 
@@ -32,15 +33,16 @@ router.get('/', async (req, res) => {
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Comment,
-          attributes: ['description', 'date_created', 'user_id'],
-        }
+      include: [{
+        model: User,
+        attributes: ['name'],
+      },
+      {
+        model: Comment,
+        attributes: ['description', 'date_created', 'user_id',
+          // [sequelize.literal(`(SELECT user.name FROM user WHERE user.id = comment.user_id)`), 'username']
+        ],
+      },
       ],
     });
 
