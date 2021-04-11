@@ -31,7 +31,7 @@ To install from GitHub, follow these steps:
 * Install dependencies by typing the following in the terminal: npm i
 * Create the database by using the data in schema.sql in a program such as MySQL Workbench
 * Seed the data by entering the following into your terminal: npm run seed
-* Once the data has been seeded, run the application by entering: npm start
+* Once the data has been seeded, run the application by entering: npm run start
 
 
 ## Usage
