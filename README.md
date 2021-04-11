@@ -36,7 +36,6 @@ To install from GitHub, follow these steps:
 
 ## Usage
 
-Below is a gif of the application's functionality:
+Deployed webpage on Heroku can be found here: [Deployed Heroku Page](https://sheltered-bayou-08162.herokuapp.com/login)
 
-[Click here](https://drive.google.com/file/d/1rd0QT0D8jzmznfnjAXZRD7ycpAec5UEH/view) to view it in a larger version.
 
