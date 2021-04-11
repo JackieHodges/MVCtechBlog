@@ -1,5 +1,4 @@
-const deletePost = async (event) => {
-  if (event.target.hasAttribute('post-id')){  
+const deletePost = async (event) => { 
     event.preventDefault();
       const postId = event.target.getAttribute('post-id');
       const response = await fetch(`/api/post/${postId}`, {
@@ -10,8 +9,7 @@ const deletePost = async (event) => {
       } else {
         alert('Failed to delete post');
       }
-    }
   };
 
-  document.querySelector('.all-posts')
+  document.querySelector('.btn-deletepost')
   .addEventListener('click', deletePost);

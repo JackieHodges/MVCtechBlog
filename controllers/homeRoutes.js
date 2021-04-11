@@ -116,4 +116,13 @@ router.get('/newpost', (req, res) => {
   res.render('newpost');
 });
 
+router.get('/updatePost', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('updatePost');
+});
+
 module.exports = router;
